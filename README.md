@@ -51,3 +51,50 @@ Weather Insights is a PyQt5-based desktop application that provides weather info
 2. Enter a city name in the input field and press Enter or click the search button to fetch and display the weather information.
 
 ## Project Structure
+
+```sh
+weather-insights/
+├── config.py
+├── images/
+│   ├── cloudy.png
+│   ├── default.png
+│   ├── droplet.png
+│   ├── mist.png
+│   ├── partly_cloudy.png
+│   ├── pressure.png
+│   ├── rain.png
+│   ├── snow.png
+│   ├── sunny.png
+│   ├── sunrise.png
+│   ├── thunderstorm.png
+│   └── wind.png
+├── main.py
+├── requirements.txt
+├── ui/
+│   └── weather_ui.py
+└── weather_service.py
+```
+## Configuration
+The configuration settings are located in the config.py file. You can customize the default units and themes.
+```sh
+# config.py
+import os
+
+# OpenWeatherMap API Configuration
+OPENWEATHER_API_KEY = os.environ.get('OPENWEATHER_API_KEY', 'your_default_api_key')
+
+# App Configuration
+APP_SETTINGS = {
+    'default_units': 'metric',
+    'themes': {
+        'light': {
+            'background': 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #E0E0E0)',
+            'text_color': 'black'
+        },
+        'dark': {
+            'background': 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2C3E50, stop:1 #34495E)',
+            'text_color': 'white'
+        }
+    }
+}
+```
